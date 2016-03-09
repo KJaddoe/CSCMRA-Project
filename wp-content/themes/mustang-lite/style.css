@@ -24,11 +24,3 @@
  *
  * @link  http://www.webmandesign.eu/manual/mustang/#child-theme
  */
-
-.nav-main .expander::before {
-    content: ">";
-}
-
-.nav-main .expander:hover::before {
-    content: "∨";
-}

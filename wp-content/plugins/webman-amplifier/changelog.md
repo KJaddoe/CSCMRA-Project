@@ -1,5 +1,34 @@
 # WebMan Amplifier Changelog
 
+## 1.3.4
+
+* **Update**: Improved scripts registering and loading
+* **Update**: Updated scripts versions (ImagesLoaded 4.1.0, Isotope 2.2.2)
+
+#### Files changed:
+
+	webman-amplifier.php
+	assets/js/plugins/imagesloaded.min.js
+	assets/js/plugins/isotope.pkgd.min.js
+	includes/icons/class-icon-font.php
+	includes/metabox/class-metabox.php
+	includes/shortcodes/class-shortcodes.php
+
+
+## 1.3.3
+
+* **Update**: Improved icon font admin screen
+* **Update**: Removed Isotope admin pointer message
+* **Update**: Updated localization
+
+#### Files changed:
+
+	class-wm-amplifier.php
+	webman-amplifier.php
+	webman-amplifier-setup.php
+	includes/icons/class-icon-font.php
+
+
 ## 1.3.2
 
 * **Update**: Improved compatibility with child themes
