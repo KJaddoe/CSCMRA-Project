@@ -14,9 +14,9 @@
 get_header();
 
 if ( function_exists( 'wma_amplifier' ) ) {
-	get_template_part( 'loop', 'singular' );
+    get_template_part( 'loop', 'singular' );
 } else {
-	get_template_part( 'loop', 'page' );
+    get_template_part( 'loop', 'page' );
 }
 
 get_footer();

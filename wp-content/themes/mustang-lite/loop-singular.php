@@ -30,22 +30,22 @@
  * Helper variables
  */
 
-	$content_area_class = '';
+    $content_area_class = '';
 
-	$sidebar_none_posts = apply_filters( 'wmhook_sidebar_none_posts', array(
-			'wm_projects',
-			'page',
-		) );
-	$sidebar_none_posts = is_singular( $sidebar_none_posts );
+    $sidebar_none_posts = apply_filters( 'wmhook_sidebar_none_posts', array(
+            'wm_projects',
+            'page',
+        ) );
+    $sidebar_none_posts = is_singular( $sidebar_none_posts );
 
-	if (
-			function_exists( 'wma_meta_option' )
-			&& 'sections' == wma_meta_option( 'sidebar' )
-		) {
-		$sections_layout = true;
-	} else {
-		$sections_layout = false;
-	}
+    if (
+            function_exists( 'wma_meta_option' )
+            && 'sections' == wma_meta_option( 'sidebar' )
+        ) {
+        $sections_layout = true;
+    } else {
+        $sections_layout = false;
+    }
 
 
 
@@ -55,7 +55,7 @@
  * Variables setup
  */
 
-	$sidebar = wm_sidebar_setup();
+    $sidebar = wm_sidebar_setup();
 
 
 
@@ -63,80 +63,80 @@
  * Actual page/post output
  */
 
-	if ( ! $sections_layout ) {
-		echo "\r\n\r\n" . '<div class="wrap-inner">';
+    if ( ! $sections_layout ) {
+        echo "\r\n\r\n" . '<div class="wrap-inner">';
 
-		$content_area_class = $sidebar['class_main'];
-	}
-
-
-
-		echo "\r\n\t" . '<div class="content-area site-content' . $content_area_class . '">' . "\r\n\r\n";
+        $content_area_class = $sidebar['class_main'];
+    }
 
 
 
-		wmhook_entry_before();
-
-		if ( have_posts() ) {
-
-			the_post();
-
-			if ( $sidebar_none_posts ) {
-
-				/**
-				 * Remove JetPack sharing when Sections used
-				 */
-
-					if ( $sections_layout ) {
-						remove_filter( 'the_content', 'sharing_display', 19 );
-					}
-
-				echo '<article id="post-' . get_the_ID() . '" class="' . implode( ' ', get_post_class() ) . '"' . wm_schema_org( 'article' ) . '>';
-
-						wmhook_entry_top();
-
-						the_content();
-
-						wmhook_entry_bottom();
-
-				echo '</article>';
-
-			} else {
-
-				$content_type = '';
-
-				if ( is_singular( 'post' ) ) {
-					$content_type = get_post_format();
-				} elseif ( get_post_type() ) {
-					$content_type = 'type-' . get_post_type();
-				}
-
-				get_template_part( 'content', apply_filters( 'wmhook_loop_singular_content_type', $content_type ) );
-
-			}
-
-			wp_reset_query();
-
-		} // /have_posts()
-
-		wmhook_entry_after();
+        echo "\r\n\t" . '<div class="content-area site-content' . $content_area_class . '">' . "\r\n\r\n";
 
 
 
-		echo "\r\n\r\n\t" . '</div> <!-- /content-area -->';
+        wmhook_entry_before();
+
+        if ( have_posts() ) {
+
+            the_post();
+
+            if ( $sidebar_none_posts ) {
+
+                /**
+                 * Remove JetPack sharing when Sections used
+                 */
+
+                    if ( $sections_layout ) {
+                        remove_filter( 'the_content', 'sharing_display', 19 );
+                    }
+
+                echo '<article id="post-' . get_the_ID() . '" class="' . implode( ' ', get_post_class() ) . '"' . wm_schema_org( 'article' ) . '>';
+
+                        wmhook_entry_top();
+
+                        the_content();
+
+                        wmhook_entry_bottom();
+
+                echo '</article>';
+
+            } else {
+
+                $content_type = '';
+
+                if ( is_singular( 'post' ) ) {
+                    $content_type = get_post_format();
+                } elseif ( get_post_type() ) {
+                    $content_type = 'type-' . get_post_type();
+                }
+
+                get_template_part( 'content', apply_filters( 'wmhook_loop_singular_content_type', $content_type ) );
+
+            }
+
+            wp_reset_query();
+
+        } // /have_posts()
+
+        wmhook_entry_after();
 
 
 
-	if ( ! $sections_layout ) {
-		/**
-		 * Sidebar implementation
-		 *
-		 * Output
-		 */
+        echo "\r\n\r\n\t" . '</div> <!-- /content-area -->';
 
-			echo $sidebar['output'];
 
-		echo "\r\n" . '</div> <!-- /wrap-inner -->' . "\r\n\r\n";
-	}
+
+    if ( ! $sections_layout ) {
+        /**
+         * Sidebar implementation
+         *
+         * Output
+         */
+
+            echo $sidebar['output'];
+
+        echo "\r\n" . '</div> <!-- /wrap-inner -->' . "\r\n\r\n";
+    }
 
 ?>

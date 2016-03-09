@@ -17,7 +17,7 @@
  * HTML
  */
 
-	wmhook_html_before();
+    wmhook_html_before();
 
 ?>
 
@@ -26,26 +26,26 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html class="no-js"<?php echo wm_schema_org( 'html' ); ?> <?php language_attributes(); ?>><!--<![endif]-->
 
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<?php
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    <?php
 
-	/**
-	 * HTML head
-	 */
+    /**
+     * HTML head
+     */
 
-	wmhook_head_top();
+    wmhook_head_top();
 
-	?>
+    ?>
 
-	<title><?php wp_title( '' ); ?></title>
+    <title><?php wp_title( '' ); ?></title>
 
-	<?php
+    <?php
 
-	wmhook_head_bottom();
+    wmhook_head_bottom();
 
-	wp_head();
+    wp_head();
 
-	?>
+    ?>
 </head>
 
 
@@ -53,40 +53,40 @@
 
 <?php
 
-	/**
-	 * Body
-	 */
+    /**
+     * Body
+     */
 
-		wmhook_body_top();
-
-
-
-	if ( ! apply_filters( 'wmhook_disable_header', false ) ) {
-
-		/**
-		 * Header
-		 */
-
-			wmhook_header_before();
-
-			wmhook_header_top();
-
-			wmhook_header();
-
-			wmhook_header_bottom();
-
-			wmhook_header_after();
+        wmhook_body_top();
 
 
 
-		/**
-		 * Content
-		 */
+    if ( ! apply_filters( 'wmhook_disable_header', false ) ) {
 
-			wmhook_content_before();
+        /**
+         * Header
+         */
 
-			wmhook_content_top();
+            wmhook_header_before();
 
-	} // /wmhook_disable_header
+            wmhook_header_top();
+
+            wmhook_header();
+
+            wmhook_header_bottom();
+
+            wmhook_header_after();
+
+
+
+        /**
+         * Content
+         */
+
+            wmhook_content_before();
+
+            wmhook_content_top();
+
+    } // /wmhook_disable_header
 
 ?>
