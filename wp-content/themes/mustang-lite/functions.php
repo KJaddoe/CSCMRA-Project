@@ -113,4 +113,11 @@
         function theme_enqueue_styles() {
                 wp_enqueue_style('theme-extra', get_stylesheet_directory_uri().'/less/style.less');
         }
+
+        /** not working
+        function my_theme_add_editor_styles() {
+                add_editor_style('less/style.less');
+        }
+        add_action( 'admin_init', 'my_theme_add_editor_styles' );
+*/
 ?>

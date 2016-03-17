@@ -26,3 +26,8 @@
  */
 
 /** style.less is used for styling*/
+
+.credits {
+    position: relative;
+    padding: 20px 0;
+}
