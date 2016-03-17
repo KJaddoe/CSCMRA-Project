@@ -1,3 +1,37 @@
-.nav-main .menu-item:hover .expander::before {
-    content: "-";
+header {
+    .header-container {
+        .nav-main .menu{
+            >.menu-item {
+                &:hover{
+                    .expander::before {
+                        content: "-";
+                    }
+                }
+                >a {
+                    box-shadow: none @i;
+                    position: relative;
+                    &:before {
+                        content: " ";
+                        position: absolute;
+                        bottom: 0;
+                        left: 1em;
+                        width: 0px;
+                        height: 3px;
+                        .transition(0.3s);
+                    }
+                    &:hover:before {
+                        .transition(0.3s);
+                        background: @white;
+                        width: calc(100% ~"-" 2em);
+                        border-radius: 20px;
+                    }
+                }
+                &.current_page_item > a:before {
+                    background: @white;
+                    width: calc(100% ~"-" 2em);
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
 }
