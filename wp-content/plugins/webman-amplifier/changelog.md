@@ -1,5 +1,50 @@
 # WebMan Amplifier Changelog
 
+## 1.3.7
+
+* **Fix**: Typos
+* **Fix**: Duplicate button ID when set via Beaver Builder page builder
+
+#### Files changed:
+
+	includes/shortcodes/definitions/definitions.php
+	includes/shortcodes/page-builder/beaver-builder/beaver-builder.php
+	includes/shortcodes/renderers/button.php
+	includes/shortcodes/renderers/call_to_action.php
+	includes/shortcodes/renderers/image.php
+	includes/shortcodes/renderers/icon.php
+
+
+## 1.3.6
+
+* **Update**: Visual Composer 4.11+ compatible
+
+#### Files changed:
+
+	includes/shortcodes/class-shortcodes.php
+
+
+## 1.3.5
+
+* **Add**: Slick (v1.5.9) slider script support
+* **Update**: Improved compatibility with SSL
+* **Update**: Plugin info texts
+* **Update**: Removing localization files in favor of translate.wordpress.org
+
+#### Files changed:
+
+	class-wm-amplifier.php
+	readme.md
+	readme.txt
+	webman-amplifier.php
+	assets/js/shortcode-posts.js
+	assets/js/plugins/slick.js
+	assets/js/plugins/slick.min.js
+	includes/icons/class-icon-font.php
+	includes/metabox/class-metabox.php
+	includes/shortcodes/class-shortcodes.php
+
+
 ## 1.3.4
 
 * **Update**: Improved scripts registering and loading

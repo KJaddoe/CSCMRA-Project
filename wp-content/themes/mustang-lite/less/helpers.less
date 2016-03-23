@@ -100,26 +100,4 @@
     }
 }
 
-.read-more() {
-    @arrowsize: 11px;
-    color: @linkcolor;
-    display: inline-block;
-    padding-right: 20px;
-    background-image: url("/sites/all/themes/cur/media/EpplixPijl_LightBlue.png");
-    background-position: calc(100% ~"-" @arrowsize/2) calc(60% ~"-" 1px); // -1 to align the arrow just right
-    background-repeat: no-repeat;
-    background-size: auto @arrowsize;
-    .transition(all 0.2s ease 0s);
-    &:hover{
-        color: @linkhovercolor;
-        background-image: url("/sites/all/themes/cur/media/EpplixPijl_DarkBlue.png");
-    }
-}
-
-.dotdotdot(@max-height) {
-    overflow: hidden;
-    display: block;
-    max-height: @max-height;
-}
-
 @i:!important;
